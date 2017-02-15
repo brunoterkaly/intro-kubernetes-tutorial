@@ -393,7 +393,7 @@ At this point we can start testing the cluster.  The pods and services are alrea
 	http<nolink>://XXX/courses/add
 	http<nolink>://XXX/courses/{course id}
 	
-
+## Video 3
 
 ### Testing the application
 
