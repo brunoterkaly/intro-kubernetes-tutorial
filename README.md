@@ -1,4 +1,38 @@
-# Building a restful Web service using Kubernetes (K8s)
+# Building a RESTful Web service using Kubernetes (K8s)
+
+Technologies include:
+
+- Kubernetes running in Azure Container Servcie
+- Python + Flask = Web API
+- Redis is the caching layer
+- MySQL is a data store
+- Everything runs in a Docker container
+
+This content is 95%+ hands-on and does not include much conceptual discussion.
+
+The assumption here is that you already know you want to learn Kubernetes and that you just want to setup a cluster.
+
+<table style="float: none; border-bottom: #b4b4b4 1px solid; text-align: left; border-left : #b4b4b4 1px solid; border-collapse: collapse; 
+              font-family: Calibri, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #000000; border-top: medium none; 
+			  border-right: #b4b4b4 1px solid;"><tr style="background-color:rgb(242,247,247); vertical-align: top"><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		Step-by-step: Provision Kubernetes Cluster</td><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		Document</td><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		<a href="https://github.com/brunoterkaly/provision-kubernetes" target="_blank" >Click Here</a></td></tr><tr style="background-color: rgb(216,223,230); vertical-align: top"><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		Step-by-step: Provision Kubernetes Cluster</td><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		Video</td><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		<a href="https://www.youtube.com/watch?v=GnMdiTuU_lI&t=202s" target="_blank" >Click Here</a></td></tr><tr style="background-color:rgb(242,247,247); vertical-align: top"><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		Kubernetes Step-by-step: Python, Flask, Redis, MySQL</td><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		Document</td><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		<a href="https://github.com/brunoterkaly/intro-kubernetes-tutorial" target="_blank" >Click Here</a></td></tr><tr style="background-color: rgb(216,223,230); vertical-align: top"><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		Part 2: Kubernetes Step-by-step: Python, Flask, Redis, MySQL</td><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		Video</td><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		<a href="https://www.youtube.com/watch?v=MOQ-BeNDY9Y&t=5s" target="_blank" >Click Here</a></td></tr><tr style="background-color:rgb(242,247,247); vertical-align: top"><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		Part 3: Kubernetes Step-by-step: Python, Flask, Redis, MySQL</td><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		Video</td><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		<a href="https://www.youtube.com/watch?v=WbNoEbP1n_k&t=12s" target="_blank" >Click Here</a></td></tr><tr style="background-color: rgb(216,223,230); vertical-align: top"><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		Part 4: Kubernetes Step-by-step: Python, Flask, Redis, MySQL</td><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		Video </td><td style="padding: 5px 10px; border-left: 1px solid #b4b4b4;  border-top: 1px solid #b4b4b4;">
+		<a href="https://www.youtube.com/watch?v=FQQz2xukEMU" target="_blank" >Click Here</a></td></tr></table>
 
 ## Video 1
 
@@ -419,3 +453,42 @@ And if you were to do it a second time. You would get information coming back fr
 
 
 	
+## Video 5
+
+An important aspect of cluster orchestration is the ability to scale up and scale down. Kubernetes was built from the ground up to support such activities.
+
+In this video we will take a look at replication controllers, which play the role of making sure that a certain number of containers and pods are running, taking the approach, from the robotics world, of desired state, meaning that the system is always looking at the current state and comparing it to the desired state and making the appropriate operational decisions to get to desired state.
+
+#### Taking care of KUBECONFIG
+
+One of the things we want to do is make sure that KUBECONFIG is always set correctly whenever we reboot the machine.
+
+It's a pretty simple solution to do that. You just need to modify the file ~/.bashrc.
+
+## So let's review what we did here in this session.
+
+This was a module about scaling one of our pods.
+
+We wanted the web service to be responsive to lots of users so we scaled up the number of pods.
+
+Each pod ran a copy of the Python/Flask web service, as well as the REDIS cache.
+
+The goal is to leverage the ReplicationController object that is provided by Kubernetes.
+
+
+![](./images/snap1.png)
+
+_Figure 4: blog4.png_
+
+
+It comes down to providing a YAML file.
+
+The YAML file has a template section.
+
+The template section specifies which containers make up the scale unit
+
+The scale unit is a pod
+
+We already talked about the web service container and the REDIS cache container
+ 
+This replication control can just be run from the command line and a simple kubectl command
