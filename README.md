@@ -485,10 +485,38 @@ It comes down to providing a YAML file.
 
 The YAML file has a template section.
 
-The template section specifies which containers make up the scale unit
+The template section specifies which containers make up the scale unit.
 
-The scale unit is a pod
+The scale unit is a pod.
 
-We already talked about the web service container and the REDIS cache container
+We already talked about the web service container and the REDIS cache container.
  
-This replication control can just be run from the command line and a simple kubectl command
+This replication control can just be run from the command line and a simple kubectl command.
+
+
+**web-replicationcontroller.yml**
+
+	apiVersion: v1
+	kind: ReplicationController
+	metadata:
+	  name: web
+	  labels:
+	    name: web
+	    app: demo
+	spec:
+	  replicas: 10
+	  template:
+	    metadata:
+	      labels:
+	        name: web
+	    spec:
+	        containers:
+	          - name: redis
+	            image: redis
+	            ports:
+	              - containerPort: 6379
+	                name: redis
+	                protocol: TCP
+	          - name: python
+	            image: brunoterkaly/py-red
+	
