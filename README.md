@@ -476,7 +476,7 @@ Each pod ran a copy of the Python/Flask web service, as well as the REDIS cache.
 The goal is to leverage the ReplicationController object that is provided by Kubernetes.
 
 
-![](./images/snap1.png =500x)
+![](./images/snap1.png)
 
 _Figure 4: blog4.png_
 
