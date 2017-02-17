@@ -191,7 +191,8 @@ So you will then edit "brunoterkaly" below to reflect YOUR hub.docker.com accoun
 buildpush.sh
 
 	# Make sure to run as "root" or use "sudo"
-
+    # don't forget "brunoterkaly" will not work for you
+    # use the one you created at hub.docker.com
 	sudo docker build . -t brunoterkaly/py-red
     # You may need to do a "docker login" command for the command below to work
 	sudo docker push brunoterkaly/py-red
@@ -200,9 +201,9 @@ buildpush.sh
 
 In this third video we will start looking at some YML files.
 
-Before you get here make sure you have issued the "docker build" and "docker push" commands reflected above.
+Before you get here, make sure you have issued the "docker build" and "docker push" commands reflected above.
 
-Also, for eac
+Here is some information about pods and containers.
 
 - These files define the way our containers will run in the Kubernetes cluster
 - They also define how the containers are organized within pods
