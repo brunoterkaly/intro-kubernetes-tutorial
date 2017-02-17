@@ -77,7 +77,7 @@ In this second video we are building out the web service and focusing on the Pyt
 - buildpush.sh is some script code to do both the building of the image, as well as the uploading of the image to hub.docker.com
 
 
-#### Code summary
+### Code summary
 
 
 
@@ -183,11 +183,14 @@ app.py
 
 #### buildpush.sh
 
+Remember to go to hub.docker.com and create your own account. As you can see, I chose "brunoterkaly" as the owner of my repos on hub.docker.com. 
+
+So you will then edit "brunoterkaly" below to reflect YOUR hub.docker.com account.
+
 buildpush.sh
 
 	docker build . -t brunoterkaly/py-red
 	docker push brunoterkaly/py-red
-
 
 ## Video 3
 
