@@ -193,6 +193,7 @@ buildpush.sh
 	# Make sure to run as "root" or use "sudo"
 
 	sudo docker build . -t brunoterkaly/py-red
+    # You may need to do a "docker login" command for the command below to work
 	sudo docker push brunoterkaly/py-red
 
 ## Video 3
