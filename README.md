@@ -90,6 +90,8 @@ In this second video we are building out the web service and focusing on the Pyt
 
 Dockerfile
 
+
+
 	FROM python:2.7-onbuild
 	EXPOSE 5000
 	CMD [ "python", "app.py" ]
@@ -189,8 +191,10 @@ So you will then edit "brunoterkaly" below to reflect YOUR hub.docker.com accoun
 
 buildpush.sh
 
-	docker build . -t brunoterkaly/py-red
-	docker push brunoterkaly/py-red
+	# Make sure to run as "root" or use "sudo"
+
+	sudo docker build . -t brunoterkaly/py-red
+	sudo docker push brunoterkaly/py-red
 
 ## Video 3
 
