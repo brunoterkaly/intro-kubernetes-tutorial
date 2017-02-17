@@ -90,8 +90,6 @@ In this second video we are building out the web service and focusing on the Pyt
 
 Dockerfile
 
-
-
 	FROM python:2.7-onbuild
 	EXPOSE 5000
 	CMD [ "python", "app.py" ]
@@ -105,7 +103,7 @@ Dockerfile
 Expose the "init" endpoint
 - The user will hit http://ourwebservice/init
 - And all this database code will execute
-- 
+- Later we will see that "ourwebservice" will be the ip address of the service for the web pod.
 
 Expose the "add" endpoint
 - The user will hit http://ourwebservice/courses/add
@@ -182,6 +180,7 @@ app.py
 	if __name__ == "__main__":
 	    app.run(host="0.0.0.0", port=5000, debug=True)
 
+### Make sure to build using sudo before continuing past this section.
 
 #### buildpush.sh
 
