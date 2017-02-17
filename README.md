@@ -196,6 +196,10 @@ buildpush.sh
 
 In this third video we will start looking at some YML files.
 
+Before you get here make sure you have issued the "docker build" and "docker push" commands reflected above.
+
+Also, for eac
+
 - These files define the way our containers will run in the Kubernetes cluster
 - They also define how the containers are organized within pods
 - Pods group together containers in the same host
@@ -231,7 +235,9 @@ In this third video we will start looking at some YML files.
 
 #### web-pod-1.yml
 
-Defines the pod for the web part of the application
+Defines the pod for the web part of the application.
+
+Anytime you see "brunoterkaly," you need to replace that with your own account name at hub.docker.com.
 
 web-pod-1.yml
 
